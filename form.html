@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FORM</title>
+        <style>
+            body{
+                background-color: peachpuff;
+            }
+            .form {
+                margin: 100px;
+                padding: 8px;
+                text-align: center;
+                background-color: wheat;
+            }
+            input, button, textarea {
+                text-align: center; 
+                padding: 4px; 
+                margin-top: 10px;
+                background-color: burlywood; 
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h2 style="text-align: center;"><b>EMPLOYEE DETAILS</b></h2>
+
+        <form id="form">
+            <label for="name">NAME</label>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">EMAIL</label>
+            <input type="email" id="email"><br>
+
+            <label for="gender">GENDER</label>
+            <label><input type="radio" id="gender" value="male">MALE</label>
+            <!-- <label for="male">MALE</label> -->
+            <label><input type="radio" id="gender" value="female">FEMALE</label><br>
+            <!--<label for="female">FEMALE</label><br>-->
+            
+            <label for="dob">DOB</label>
+            <input type="date" id="dob"><br>
+            <label for="salary">SALARY</label>
+            <input type="text" id="salary"><br>
+            <label for="designation">DESIGNATION</label>
+            <input type="text" id="designation"><br><br>
+            <label for="address">ADDRESS</label><br>
+            <textarea rows="5px" cols="40px" id="address"></textarea><br>
+            
+            <input type="submit" value="submit">
+        </form>
+
+        <script>
+                document.getElementById("form").addEventListener("submit", function(event){
+                    event.preventDefault();
+                
+                let name = document.getElementById("name").value;
+                console.log("Name:",name);
+                let email = document.getElementById("email").value;
+                console.log(email);
+                let selGender = document.querySelector('input[id="gender"]:checked');
+                console.log(selGender.value);
+                let dob = document.getElementById("dob").value;
+                console.log(dob);
+                let sal = document.getElementById("salary").value;
+                console.log(sal);
+                let desg = document.getElementById("designation").value;
+                console.log(desg);
+                let addr = document.getElementById("address").value;
+                console.log(addr);
+            });
+            
+                
+            
+        </script>
+
+    </body>
+</html>
